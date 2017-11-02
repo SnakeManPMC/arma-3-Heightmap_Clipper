@@ -3,6 +3,7 @@
 
 #include <QFileDialog>
 #include <QTextStream>
+#include <QProgressDialog>
 
 Widget::Widget(QWidget *parent) :
 	QWidget(parent),
@@ -93,6 +94,13 @@ cellsize      10
 
 	ui->textEdit->append("ocean_level: " + QString::number(ui->ocean_level->value()) + "\nocean_clip: " + QString::number(ui->ocean_clip->value()));
 
+	QProgressDialog progressDialog(this);
+	progressDialog.setRange(0, (ncols * nrows));
+	progressDialog.setWindowTitle(tr("Heightmap Grid Points"));
+
+	// total count for the progressdialog value
+	int wholeGrid = 0;
+
 	while (!in.atEnd())
 	{
 		line = in.readLine();
@@ -102,6 +110,7 @@ cellsize      10
 		// loop all the ncols through
 		for (int i=0; i<ncols; i++)
 		{
+			wholeGrid++;
 			float fnumbah = list[i].toFloat(&ok);
 			//ui->textEdit->append("list[" + QString::number(i) + "]: " + list[i] + ", fnumbah: " + QString::number(fnumbah));
 
@@ -131,6 +140,11 @@ cellsize      10
 			// write to outFile individual grid point in THIS LINE
 			out << list[i] << " ";
 		}
+
+		// update progressdialog, do not update this too ofte or it will slow your program down
+		progressDialog.setValue(wholeGrid);
+		progressDialog.setLabelText(tr("Processing grid point %1 of %2...").arg(wholeGrid).arg(ncols * nrows));
+		qApp->processEvents();
 
 		// write to outFile end of line
 		out << endl;
