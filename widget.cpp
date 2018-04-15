@@ -115,8 +115,7 @@ cellsize      10
 			//ui->textEdit->append("list[" + QString::number(i) + "]: " + list[i] + ", fnumbah: " + QString::number(fnumbah));
 
 			// clip below 0 meters to 0.25 meter as thats how arma3 works :)
-			//if (fnumbah > ui->aboveGround_low->value() && fnumbah < ui->aboveGround_high->value())
-			if (fnumbah < 0.25)
+			if (fnumbah > ui->aboveGround_low->value() && fnumbah < ui->aboveGround_high->value())
 			{
 				// change the elevation value to one in clipped setting
 				fnumbah = ui->aboveGround_clip->value();
@@ -125,7 +124,7 @@ cellsize      10
 				// put the modified number back to qstringlist
 				list[i] = QString::number(fnumbah);
 			}
-/*
+
 			// if our elevation value matches ocean value
 			if (fnumbah == ui->ocean_level->value())
 			{
@@ -136,7 +135,7 @@ cellsize      10
 				// put the modified number back to qstringlist
 				list[i] = QString::number(fnumbah).append(".00");
 			}
-*/
+
 			// write to outFile individual grid point in THIS LINE
 			out << list[i] << " ";
 		}

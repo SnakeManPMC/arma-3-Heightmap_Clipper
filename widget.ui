@@ -39,9 +39,9 @@
   <widget class="QLabel" name="ocean_label">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>10</y>
-     <width>91</width>
+     <x>11</x>
+     <y>11</y>
+     <width>201</width>
      <height>16</height>
     </rect>
    </property>
@@ -89,7 +89,7 @@
     <rect>
      <x>230</x>
      <y>10</y>
-     <width>151</width>
+     <width>311</width>
      <height>16</height>
     </rect>
    </property>
@@ -106,11 +106,17 @@
      <height>20</height>
     </rect>
    </property>
+   <property name="decimals">
+    <number>2</number>
+   </property>
    <property name="minimum">
-    <double>0.000000000000000</double>
+    <double>0.010000000000000</double>
    </property>
    <property name="maximum">
-    <double>0.300000000000000</double>
+    <double>99999999.000000000000000</double>
+   </property>
+   <property name="singleStep">
+    <double>0.010000000000000</double>
    </property>
   </widget>
   <widget class="QDoubleSpinBox" name="aboveGround_high">
@@ -123,13 +129,16 @@
     </rect>
    </property>
    <property name="minimum">
-    <double>-10000.000000000000000</double>
+    <double>0.010000000000000</double>
    </property>
    <property name="maximum">
-    <double>0.250000000000000</double>
+    <double>99999999.000000000000000</double>
+   </property>
+   <property name="singleStep">
+    <double>0.010000000000000</double>
    </property>
    <property name="value">
-    <double>0.250000000000000</double>
+    <double>0.400000000000000</double>
    </property>
   </widget>
   <widget class="QDoubleSpinBox" name="aboveGround_clip">
@@ -142,13 +151,16 @@
     </rect>
    </property>
    <property name="minimum">
-    <double>-10000.000000000000000</double>
+    <double>0.010000000000000</double>
    </property>
    <property name="maximum">
-    <double>1.000000000000000</double>
+    <double>9999999.000000000000000</double>
+   </property>
+   <property name="singleStep">
+    <double>0.010000000000000</double>
    </property>
    <property name="value">
-    <double>0.250000000000000</double>
+    <double>0.500000000000000</double>
    </property>
   </widget>
  </widget>
