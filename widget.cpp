@@ -10,7 +10,7 @@ Widget::Widget(QWidget *parent) :
 	ui(new Ui::Widget)
 {
 	ui->setupUi(this);
-	setWindowTitle("Heightmap Clipper");
+	setWindowTitle("Heightmap Clipper v0.1.2");
 }
 
 Widget::~Widget()
@@ -68,6 +68,7 @@ cellsize      10
 	list = line.split(" ", QString::SkipEmptyParts);
 	xllcorner = list[1].toFloat(&ok);
 
+	line = "xllcorner     200000";
 	out << line << endl;
 
 	// yllcorner     0.000000
@@ -75,6 +76,7 @@ cellsize      10
 	list = line.split(" ", QString::SkipEmptyParts);
 	yllcorner = list[1].toFloat(&ok);
 
+	line = "yllcorner     0";
 	out << line << endl;
 
 	// cellsize      10.000000
@@ -93,6 +95,9 @@ cellsize      10
 			     + "\nxllcorner: " + QString::number(xllcorner) + "\nyllcorner: " + QString::number(yllcorner) + "\ncellsize: " + QString::number(cellsize));
 
 	ui->textEdit->append("ocean_level: " + QString::number(ui->ocean_level->value()) + "\nocean_clip: " + QString::number(ui->ocean_clip->value()));
+
+	ui->textEdit->append("Original ASC Header: X " + QString::number(xllcorner) + ", Y " + QString::number(yllcorner));
+	ui->textEdit->append("Calculator: " + QString::number((200000 - xllcorner)) + " -" + QString::number(yllcorner));
 
 	QProgressDialog progressDialog(this);
 	progressDialog.setRange(0, (ncols * nrows));
