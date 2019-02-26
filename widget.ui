@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>565</width>
-    <height>415</height>
+    <width>546</width>
+    <height>419</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,32 +16,32 @@
   <widget class="QPushButton" name="openASC">
    <property name="geometry">
     <rect>
-     <x>480</x>
-     <y>380</y>
-     <width>75</width>
+     <x>320</x>
+     <y>370</y>
+     <width>201</width>
      <height>23</height>
     </rect>
    </property>
    <property name="text">
-    <string>Open ASC</string>
+    <string>Open ASC and Start Processing</string>
    </property>
   </widget>
   <widget class="QTextEdit" name="textEdit">
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>91</y>
-     <width>541</width>
-     <height>281</height>
+     <y>90</y>
+     <width>521</width>
+     <height>261</height>
     </rect>
    </property>
   </widget>
   <widget class="QLabel" name="ocean_label">
    <property name="geometry">
     <rect>
-     <x>11</x>
+     <x>21</x>
      <y>11</y>
-     <width>201</width>
+     <width>171</width>
      <height>16</height>
     </rect>
    </property>
@@ -52,7 +52,7 @@
   <widget class="QDoubleSpinBox" name="ocean_level">
    <property name="geometry">
     <rect>
-     <x>10</x>
+     <x>20</x>
      <y>30</y>
      <width>71</width>
      <height>20</height>
@@ -68,7 +68,7 @@
   <widget class="QDoubleSpinBox" name="ocean_clip">
    <property name="geometry">
     <rect>
-     <x>100</x>
+     <x>110</x>
      <y>30</y>
      <width>71</width>
      <height>20</height>
@@ -101,7 +101,7 @@
    <property name="geometry">
     <rect>
      <x>230</x>
-     <y>30</y>
+     <y>50</y>
      <width>71</width>
      <height>20</height>
     </rect>
@@ -122,8 +122,8 @@
   <widget class="QDoubleSpinBox" name="aboveGround_high">
    <property name="geometry">
     <rect>
-     <x>320</x>
-     <y>30</y>
+     <x>340</x>
+     <y>50</y>
      <width>71</width>
      <height>20</height>
     </rect>
@@ -144,8 +144,8 @@
   <widget class="QDoubleSpinBox" name="aboveGround_clip">
    <property name="geometry">
     <rect>
-     <x>400</x>
-     <y>30</y>
+     <x>440</x>
+     <y>50</y>
      <width>71</width>
      <height>20</height>
     </rect>
@@ -161,6 +161,45 @@
    </property>
    <property name="value">
     <double>1.000000000000000</double>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_from_elevation">
+   <property name="geometry">
+    <rect>
+     <x>230</x>
+     <y>30</y>
+     <width>111</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>From Elevation</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_to_elevation">
+   <property name="geometry">
+    <rect>
+     <x>340</x>
+     <y>30</y>
+     <width>91</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>To Elevation</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_change_elevation">
+   <property name="geometry">
+    <rect>
+     <x>440</x>
+     <y>30</y>
+     <width>91</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Set Elevation</string>
    </property>
   </widget>
  </widget>

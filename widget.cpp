@@ -10,7 +10,7 @@ Widget::Widget(QWidget *parent) :
 	ui(new Ui::Widget)
 {
 	ui->setupUi(this);
-	setWindowTitle("Heightmap Clipper v0.1.2");
+	setWindowTitle("Heightmap Clipper v0.1.3");
 }
 
 Widget::~Widget()
@@ -96,9 +96,6 @@ cellsize      10
 
 	ui->textEdit->append("ocean_level: " + QString::number(ui->ocean_level->value()) + "\nocean_clip: " + QString::number(ui->ocean_clip->value()));
 
-	ui->textEdit->append("Original ASC Header: X " + QString::number(xllcorner) + ", Y " + QString::number(yllcorner));
-	ui->textEdit->append("Calculator: " + QString::number((200000 - xllcorner)) + " -" + QString::number(yllcorner));
-
 	QProgressDialog progressDialog(this);
 	progressDialog.setRange(0, (ncols * nrows));
 	progressDialog.setWindowTitle(tr("Heightmap Grid Points"));
@@ -138,7 +135,7 @@ cellsize      10
 				//ui->textEdit->append("Yippy the clip! new fnumbah: " + QString::number(fnumbah));
 
 				// put the modified number back to qstringlist
-				list[i] = QString::number(fnumbah).append(".00");
+				list[i] = QString::number(fnumbah);
 			}
 
 			// write to outFile individual grid point in THIS LINE
