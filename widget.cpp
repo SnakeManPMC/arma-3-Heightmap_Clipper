@@ -10,7 +10,7 @@ Widget::Widget(QWidget *parent) :
 	ui(new Ui::Widget)
 {
 	ui->setupUi(this);
-	setWindowTitle("Heightmap Clipper v0.1.3");
+    setWindowTitle("Heightmap Clipper v0.1.4");
 }
 
 Widget::~Widget()
@@ -50,46 +50,46 @@ cellsize      10
 
 	// ncols         512
 	line = in.readLine();
-	list = line.split(" ", QString::SkipEmptyParts);
+    list = line.split(" ", Qt::SkipEmptyParts);
 	ncols = list[1].toInt(&ok);
 
 	// out file
-	out << line << endl;
+    out << line << Qt::endl;
 
 	// nrows         512
 	line = in.readLine();
-	list = line.split(" ", QString::SkipEmptyParts);
+    list = line.split(" ", Qt::SkipEmptyParts);
 	nrows = list[1].toInt(&ok);
 
-	out << line << endl;
+    out << line << Qt::endl;
 
 	// xllcorner     200000.000000
 	line = in.readLine();
-	list = line.split(" ", QString::SkipEmptyParts);
+    list = line.split(" ", Qt::SkipEmptyParts);
 	xllcorner = list[1].toFloat(&ok);
 
 	line = "xllcorner     200000";
-	out << line << endl;
+    out << line << Qt::endl;
 
 	// yllcorner     0.000000
 	line = in.readLine();
-	list = line.split(" ", QString::SkipEmptyParts);
+    list = line.split(" ", Qt::SkipEmptyParts);
 	yllcorner = list[1].toFloat(&ok);
 
 	line = "yllcorner     0";
-	out << line << endl;
+    out << line << Qt::endl;
 
 	// cellsize      10.000000
 	line = in.readLine();
-	list = line.split(" ", QString::SkipEmptyParts);
+    list = line.split(" ", Qt::SkipEmptyParts);
 	cellsize = list[1].toInt(&ok);
 
-	out << line << endl;
+    out << line << Qt::endl;
 
 	// NODATA_value  -9999
 	line = in.readLine();
 
-	out << line << endl;
+    out << line << Qt::endl;
 
 	ui->textEdit->append("ncols: " + QString::number(ncols) + "\nnrows: " + QString::number(nrows)
 			     + "\nxllcorner: " + QString::number(xllcorner) + "\nyllcorner: " + QString::number(yllcorner) + "\ncellsize: " + QString::number(cellsize));
@@ -148,7 +148,7 @@ cellsize      10
 		qApp->processEvents();
 
 		// write to outFile end of line
-		out << endl;
+        out << Qt::endl;
 	}
 
 	ui->textEdit->append("All done, exit.");
